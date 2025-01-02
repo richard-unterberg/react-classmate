@@ -386,9 +386,25 @@ export const Component = () => <StyledField placeholder="placeholder" as="select
 
 ⚠️ This is a workaround! This is a _bug_ - we should be able to pass the types directly in the interface in which we pass `$error`. Contributions welcome.
 
+## CommonJS
+
+If you are using CommonJS, you can import the library like this:
+
+```js
+const rc = require("react-classmate").default;
+
+// or
+
+const { default: rc } = require("react-classmate");
+```
+
 ## Upcoming
 
 - Variants for `rc.extend`
+- named lib import for CommonJS (currently only `.default`)
+  -- Means we need to remove the named export in the ts file to not duplicate IDE import suggestions:
+  --- Change postbuild script to remove named esm export
+- Nest components?
 - Integrate more tests, benchmarks focused on SSR and React
 - Advanced IDE integration
   - show generated default class on hover

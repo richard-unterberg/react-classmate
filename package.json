@@ -1,12 +1,15 @@
 {
   "name": "react-classmate",
   "description": "A tool for managing react component class names, variants and styles",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "author": "https://github.com/richard-unterberg",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/richard-unterberg/react-classmate.git"
   },
+  "workspaces": [
+    "docs"
+  ],
   "keywords": [
     "react",
     "classmate",
@@ -34,7 +37,12 @@
     "test": "jest",
     "clean": "rm -rf dist",
     "lefthook": "lefthook install",
-    "bundle": "rollup -c"
+    "bundle": "rollup -c",
+    "========= Docs": "",
+    "docs": "cd docs/ && npm run dev",
+    "docs:prod": "cd docs/ && npm run build && npm run preview",
+    "docs:build": "cd docs/ && npm run build",
+    "docs:preview": "cd docs/ && npm run preview"
   },
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
@@ -45,8 +53,7 @@
   "exports": {
     ".": {
       "require": "./dist/index.cjs.js",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.js"
     }
   },
   "peerDependencies": {
@@ -65,12 +72,11 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/jest": "^29.5.14",
-    "@types/react": "^18.3.16",
+    "@types/react": "^19.0.2 ",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lefthook": "^1.10.1",
-    "prettier": "^3.4.2",
     "rollup": "^4.29.1",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-esbuild-minify": "^1.2.0",
